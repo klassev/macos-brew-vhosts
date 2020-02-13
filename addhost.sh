@@ -49,9 +49,6 @@ echo "
     </VirtualHost>
 </IfModule>" >> $vhostConfig
 
-#sed -i "1s/^/127.0.0.1 $vhostName\n/" /etc/hosts
-#sudo echo -e "127.0.0.1\t$vhostName" >> /etc/hosts
-
 echo "127.0.0.1\t$vhostName" | sudo tee -a /etc/hosts > /dev/null
 
 sudo apachectl configtest
